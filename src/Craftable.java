@@ -19,7 +19,7 @@ public class Craftable extends Item
      * @param numProd the number of the item produced from the recipe
      * @param ingredients the ingredients to make this item
      */
-    public Craftable(String name, double[] count, double craftSpeed, double numProd, Item ... ingredients)
+    public Craftable(String name, double[] count, double craftSpeed, CrafterType craftedBy, double numProd, Item ... ingredients)
     {
         super(name);
         components = new ArrayList<Item>(Arrays.asList(ingredients));

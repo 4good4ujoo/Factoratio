@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="842fc202-27f2-4ad9-8b3f-4fd3b4b65dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CrafterType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Craftable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Craftable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RecipeNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeNetwork.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,12 +58,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="275" />
+          <entry key="java" value="892" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="275" />
+          <entry key="JAVA" value="892" />
+          <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -92,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Craftable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,15 +112,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RecipeNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="2635">
+              <caret line="155" column="16" lean-forward="true" selection-start-line="155" selection-start-column="16" selection-end-line="155" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#genCraftableRecipe#0;class#RecipeNetwork#0" />
-                <element signature="method#genCraftableRecipe#0;class#RecipeNetwork#0" />
               </folding>
             </state>
           </provider>
@@ -133,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CrafterType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -169,9 +170,9 @@
         <option value="$PROJECT_DIR$/src/CraftableCrafter.java" />
         <option value="$PROJECT_DIR$/src/ItemNames.java" />
         <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/RecipeNetwork.java" />
-        <option value="$PROJECT_DIR$/src/Craftable.java" />
         <option value="$PROJECT_DIR$/src/CrafterType.java" />
+        <option value="$PROJECT_DIR$/src/Craftable.java" />
+        <option value="$PROJECT_DIR$/src/RecipeNetwork.java" />
       </list>
     </option>
   </component>
@@ -217,7 +218,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544739799821" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544740676429" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -255,7 +256,7 @@
       <workItem from="1544626552908" duration="15263000" />
       <workItem from="1544657014267" duration="176000" />
       <workItem from="1544727407668" duration="116000" />
-      <workItem from="1544739540024" duration="258000" />
+      <workItem from="1544739540024" duration="1478000" />
     </task>
     <task id="LOCAL-00001" summary="Factoratio refactor">
       <created>1544657143949</created>
@@ -271,17 +272,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544727520612</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added crafter enum">
+      <created>1544739918785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1544739918785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15813000" />
+    <option name="totallyTimeSpent" value="17033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25263157" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22267206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -318,7 +326,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Factoratio refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Factoratio refactor" />
+    <MESSAGE value="Added crafter enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added crafter enum" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Crafter.java">
@@ -342,15 +351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RecipeNetwork.java">
+    <entry file="file://$PROJECT_DIR$/src/ItemNames.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#genCraftableRecipe#0;class#RecipeNetwork#0" />
-            <element signature="method#genCraftableRecipe#0;class#RecipeNetwork#0" />
-          </folding>
+        <state relative-caret-position="1207">
+          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -361,27 +365,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CrafterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Craftable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ItemNames.java">
+    <entry file="file://$PROJECT_DIR$/src/RecipeNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CrafterType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="2635">
+          <caret line="155" column="16" lean-forward="true" selection-start-line="155" selection-start-column="16" selection-end-line="155" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#genCraftableRecipe#0;class#RecipeNetwork#0" />
+          </folding>
         </state>
       </provider>
     </entry>

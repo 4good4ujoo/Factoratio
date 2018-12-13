@@ -64,53 +64,96 @@ public class RecipeNetwork
         items.put(ItemNames.KOVAREX_ENRICHMENT_PROCESS_STR, kovarexEnrichmentProcess);
 
 
-        Item wood = genCraftableRecipe(ItemNames.WOOD_STR, 0.5, 2, new double[]{1}, rawWood);
-        Item ironPlate = genCraftableRecipe(ItemNames.IRON_PLATE_STR, 3.5, 1, new double[]{1}, ironOre);
-        Item copperPlate = genCraftableRecipe(ItemNames.COPPER_PLATE_STR, 3.5, 1, new double[]{1}, copperOre);
-        Item lubricant = genCraftableRecipe(ItemNames.LUBIRCANT_STR, 1, 10, new double[]{10}, heavyOil);
-        Item sulfur = genCraftableRecipe(ItemNames.SULFUR_STR, 1, 2, new double[]{30, 30}, petroleumGas, water);
-        Item sulfuricAcid = genCraftableRecipe(ItemNames.SULFURIC_ACID_STR, 1, 50, new double[]{1, 5, 100}, ironPlate, sulfur, water);
-        Item steelPlate = genCraftableRecipe(ItemNames.STEEL_PLATE_STR, 17.5, 1, new double[]{5}, ironPlate);
-        Item plasticBar = genCraftableRecipe(ItemNames.PLASTIC_BAR_STR, 1, 2, new double[]{1, 20}, coal, petroleumGas);
-        Item battery = genCraftableRecipe(ItemNames.BATTERY_STR, 5, 1, new double[]{1, 1, 20}, copperPlate, copperPlate, sulfuricAcid);
-        Item explosives = genCraftableRecipe(ItemNames.EXPLOSIVES_STR, 5, 2, new double[]{1, 1, 10}, coal, sulfur, water);
-        Item emptyBarrel = genCraftableRecipe(ItemNames.EMPTY_BARREL_STR, 1, 1, new double[]{1}, steelPlate);
-        Item crudeOilBarrel = genCraftableRecipe(ItemNames.CRUDE_OIL_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, crudeOil);
-        Item heavyOilBarrel = genCraftableRecipe(ItemNames.HEAVY_OIL_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, heavyOil);
-        Item lightOilBarrel = genCraftableRecipe(ItemNames.LIGHT_OIL_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, lightOil);
-        Item lubricantBarrel = genCraftableRecipe(ItemNames.LUBRICANT_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, lubricant);
-        Item petroleumGasBarrel = genCraftableRecipe(ItemNames.PETROLEUM_GAS_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, petroleumGas);
-        Item sulfuricAcidBarrel = genCraftableRecipe(ItemNames.SULFURIC_ACID_BARREL_STR, 0.2, 1, new double[]{1, 50}, emptyBarrel, petroleumGas);
-        Item waterBarrel = genCraftableRecipe(ItemNames.WATER_BARREL_STR, 0.2, 50, new double[]{1, 50}, emptyBarrel, water);
-        Item copperCable = genCraftableRecipe(ItemNames.COPPER_CABLE_STR, 0.5, 2, new double[]{1}, copperPlate);
-        Item ironStick = genCraftableRecipe(ItemNames.IRON_STICK_STR, 0.5, 2, new double[]{1}, ironPlate);
-        Item ironGearWheel = genCraftableRecipe(ItemNames.IRON_GEAR_WHEEL_STR, 0.5, 1, new double[]{2}, ironPlate);
-        Item electronicCircuit = genCraftableRecipe(ItemNames.ELECTRONIC_CIRCUIT_STR, 0.5, 1, new double[]{3, 1}, copperCable, ironPlate);
-        Item advancedCircuit = genCraftableRecipe(ItemNames.ADVANCED_CIRCUI_STR, 6, 1, new double[]{4, 2, 2}, copperCable, electronicCircuit, plasticBar);
-        Item processingUnit = genCraftableRecipe(ItemNames.PROCESSING_UNIT_STR, 10, 1, new double[]{2, 20, 5}, advancedCircuit, electronicCircuit, sulfuricAcid);
-        Item pipe = genCraftableRecipe(ItemNames.PIPE_STR, 0.5, 1, new double[]{1}, ironPlate);
-        Item engineUnit = genCraftableRecipe(ItemNames.ENGINE_UNIT_STR, 10, 1, new double[]{1, 2, 1}, ironGearWheel, pipe, steelPlate);
-        Item electricEngineUnit = genCraftableRecipe(ItemNames.ELECTRIC_ENGINE_UNIT_STR, 10, 1, new double[]{2, 1, 15}, electronicCircuit, engineUnit, lubricant);
-        Item flyingRobotFrame = genCraftableRecipe(ItemNames.FLYING_ROBOT_FRAME_STR, 20, 1, new double[]{2, 1, 3, 1}, battery, electricEngineUnit, electronicCircuit, steelPlate);
-        Item accumulator = genCraftableRecipe(ItemNames.ACCUMULATOR_STR, 10, 1, new double[]{5, 2}, battery, ironPlate);
+        Item wood = genCraftableRecipe(ItemNames.WOOD_STR, 0.5, 2, CrafterType.ASSEMBLER,
+                new double[]{1}, rawWood);
+        Item ironPlate = genCraftableRecipe(ItemNames.IRON_PLATE_STR, 3.5, 1, CrafterType.FURNACE,
+                new double[]{1}, ironOre);
+        Item copperPlate = genCraftableRecipe(ItemNames.COPPER_PLATE_STR, 3.5, 1,
+                CrafterType.FURNACE, new double[]{1}, copperOre);
+        Item lubricant = genCraftableRecipe(ItemNames.LUBIRCANT_STR, 1, 10,
+                CrafterType.CHEMICAL_PLANT, new double[]{10}, heavyOil);
+        Item sulfur = genCraftableRecipe(ItemNames.SULFUR_STR, 1, 2, CrafterType.CHEMICAL_PLANT,
+                new double[]{30, 30}, petroleumGas, water);
+        Item sulfuricAcid = genCraftableRecipe(ItemNames.SULFURIC_ACID_STR, 1, 50,
+                CrafterType.CHEMICAL_PLANT, new double[]{1, 5, 100}, ironPlate, sulfur, water);
+        Item steelPlate = genCraftableRecipe(ItemNames.STEEL_PLATE_STR, 17.5, 1,
+                CrafterType.FURNACE, new double[]{5}, ironPlate);
+        Item plasticBar = genCraftableRecipe(ItemNames.PLASTIC_BAR_STR, 1, 2,
+                CrafterType.CHEMICAL_PLANT, new double[]{1, 20}, coal, petroleumGas);
+        Item battery = genCraftableRecipe(ItemNames.BATTERY_STR, 5, 1, CrafterType.CHEMICAL_PLANT,
+                new double[]{1, 1, 20}, copperPlate, copperPlate, sulfuricAcid);
+        Item explosives = genCraftableRecipe(ItemNames.EXPLOSIVES_STR, 5, 2,
+                CrafterType.CHEMICAL_PLANT, new double[]{1, 1, 10}, coal, sulfur, water);
+        Item emptyBarrel = genCraftableRecipe(ItemNames.EMPTY_BARREL_STR, 1, 1,
+                CrafterType.ASSEMBLER, new double[]{1}, steelPlate);
+        Item crudeOilBarrel = genCraftableRecipe(ItemNames.CRUDE_OIL_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, crudeOil);
+        Item heavyOilBarrel = genCraftableRecipe(ItemNames.HEAVY_OIL_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, heavyOil);
+        Item lightOilBarrel = genCraftableRecipe(ItemNames.LIGHT_OIL_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, lightOil);
+        Item lubricantBarrel = genCraftableRecipe(ItemNames.LUBRICANT_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, lubricant);
+        Item petroleumGasBarrel = genCraftableRecipe(ItemNames.PETROLEUM_GAS_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, petroleumGas);
+        Item sulfuricAcidBarrel = genCraftableRecipe(ItemNames.SULFURIC_ACID_BARREL_STR, 0.2, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, petroleumGas);
+        Item waterBarrel = genCraftableRecipe(ItemNames.WATER_BARREL_STR, 0.2, 50,
+                CrafterType.ASSEMBLER, new double[]{1, 50}, emptyBarrel, water);
+        Item copperCable = genCraftableRecipe(ItemNames.COPPER_CABLE_STR, 0.5, 2,
+                CrafterType.ASSEMBLER, new double[]{1}, copperPlate);
+        Item ironStick = genCraftableRecipe(ItemNames.IRON_STICK_STR, 0.5, 2, CrafterType.ASSEMBLER,
+                new double[]{1}, ironPlate);
+        Item ironGearWheel = genCraftableRecipe(ItemNames.IRON_GEAR_WHEEL_STR, 0.5, 1,
+                CrafterType.ASSEMBLER, new double[]{2}, ironPlate);
+        Item electronicCircuit = genCraftableRecipe(ItemNames.ELECTRONIC_CIRCUIT_STR, 0.5, 1,
+                CrafterType.ASSEMBLER, new double[]{3, 1}, copperCable, ironPlate);
+        Item advancedCircuit = genCraftableRecipe(ItemNames.ADVANCED_CIRCUI_STR, 6, 1,
+                CrafterType.ASSEMBLER, new double[]{4, 2, 2}, copperCable, electronicCircuit, plasticBar);
+        Item processingUnit = genCraftableRecipe(ItemNames.PROCESSING_UNIT_STR, 10, 1,
+                CrafterType.ASSEMBLER, new double[]{2, 20, 5}, advancedCircuit, electronicCircuit, sulfuricAcid);
+        Item pipe = genCraftableRecipe(ItemNames.PIPE_STR, 0.5, 1, CrafterType.ASSEMBLER,
+                new double[]{1}, ironPlate);
+        Item engineUnit = genCraftableRecipe(ItemNames.ENGINE_UNIT_STR, 10, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 2, 1}, ironGearWheel, pipe, steelPlate);
+        Item electricEngineUnit = genCraftableRecipe(ItemNames.ELECTRIC_ENGINE_UNIT_STR, 10, 1,
+                CrafterType.ASSEMBLER, new double[]{2, 1, 15}, electronicCircuit, engineUnit, lubricant);
+        Item flyingRobotFrame = genCraftableRecipe(ItemNames.FLYING_ROBOT_FRAME_STR, 20, 1,
+                CrafterType.ASSEMBLER, new double[]{2, 1, 3, 1}, battery, electricEngineUnit, electronicCircuit,
+                steelPlate);
+        Item accumulator = genCraftableRecipe(ItemNames.ACCUMULATOR_STR, 10, 1,
+                CrafterType.ASSEMBLER, new double[]{5, 2}, battery, ironPlate);
         Item lowDensityStructure = genCraftableRecipe(ItemNames.LOW_DENSITY_STRUCTURE_STR, 30, 1,
-                new double[]{5, 5, 10}, copperPlate, plasticBar, steelPlate);
-        Item radar = genCraftableRecipe(ItemNames.RADAR_STR, 0.5, 1, new double[]{5, 5, 10}, electronicCircuit, ironGearWheel, ironPlate);
-        Item rocketFuel = genCraftableRecipe(ItemNames.ROCKET_FUEL_STR, 30, 1, new double[]{10}, solidFuel);
-        Item solarPanel = genCraftableRecipe(ItemNames.SOLAR_PANEL_STR, 10, 1, new double[]{5, 15,5}, copperPlate, electronicCircuit, steelPlate);
-        Item satellite = genCraftableRecipe(ItemNames.SATELLITE_STR, 5, 1,
-                new double[]{100, 100, 100, 5, 50, 100}, accumulator, lowDensityStructure, processingUnit, radar, rocketFuel, solarPanel);
-        Item speedModule = genCraftableRecipe(ItemNames.SPEED_MODULE_STR, 15, 1, new double[]{5, 5}, advancedCircuit, electronicCircuit);
-        Item rocketControlUnit = genCraftableRecipe(ItemNames.ROCKET_CONTROL_UNIT_STR, 30, 1, new double[]{1, 1}, processingUnit, speedModule);
-        Item rocketPart = genCraftableRecipe(ItemNames.ROCKET_PART_STR, 3, 1, new double[]{10, 10, 10}, lowDensityStructure, rocketControlUnit, rocketFuel);
-        Item uranium235 = genCraftableRecipe(ItemNames.URANIUM_235_STR, 10, 0.007, new double[]{10}, uraniumOre);
-        Item nuclearFuel = genCraftableRecipe(ItemNames.NUCLEAR_FUEL_STR, 60, 1, new double[]{1, 1}, rocketFuel, uranium235);
-        Item uranium238 = genCraftableRecipe(ItemNames.URANIUM_238_STR, 10, 0.993, new double[]{10}, uraniumOre);
-        Item uraniumFuelCell = genCraftableRecipe(ItemNames.URANIUM_FUEL_CELL_STR, 10, 10, new double[]{10, 1, 19}, ironPlate, uranium235, uranium238);
-        Item usedUpUraniumFuelCell = genCraftableRecipe(ItemNames.USED_UP_URANIUM_FUEL_CELL_STR, 200, 1, new double[]{1}, uraniumFuelCell);
+                CrafterType.ASSEMBLER, new double[]{5, 5, 10}, copperPlate, plasticBar, steelPlate);
+        Item radar = genCraftableRecipe(ItemNames.RADAR_STR, 0.5, 1, CrafterType.ASSEMBLER,
+                new double[]{5, 5, 10}, electronicCircuit, ironGearWheel, ironPlate);
+        Item rocketFuel = genCraftableRecipe(ItemNames.ROCKET_FUEL_STR, 30, 1,
+                CrafterType.ASSEMBLER, new double[]{10}, solidFuel);
+        Item solarPanel = genCraftableRecipe(ItemNames.SOLAR_PANEL_STR, 10, 1,
+                CrafterType.ASSEMBLER, new double[]{5, 15,5}, copperPlate, electronicCircuit, steelPlate);
+        Item satellite = genCraftableRecipe(ItemNames.SATELLITE_STR, 5, 1, CrafterType.ASSEMBLER,
+                new double[]{100, 100, 100, 5, 50, 100}, accumulator, lowDensityStructure, processingUnit, radar,
+                rocketFuel, solarPanel);
+        Item speedModule = genCraftableRecipe(ItemNames.SPEED_MODULE_STR, 15, 1,
+                CrafterType.ASSEMBLER, new double[]{5, 5}, advancedCircuit, electronicCircuit);
+        Item rocketControlUnit = genCraftableRecipe(ItemNames.ROCKET_CONTROL_UNIT_STR, 30, 1,
+                CrafterType.ASSEMBLER, new double[]{1, 1}, processingUnit, speedModule);
+        Item rocketPart = genCraftableRecipe(ItemNames.ROCKET_PART_STR, 3, 1, CrafterType.ASSEMBLER,
+                new double[]{10, 10, 10}, lowDensityStructure, rocketControlUnit, rocketFuel);
+        Item uranium235 = genCraftableRecipe(ItemNames.URANIUM_235_STR, 10, 0.007,
+                CrafterType.CENTRIFUGE, new double[]{10}, uraniumOre);
+        Item nuclearFuel = genCraftableRecipe(ItemNames.NUCLEAR_FUEL_STR, 60, 1,
+                CrafterType.CENTRIFUGE, new double[]{1, 1}, rocketFuel, uranium235);
+        Item uranium238 = genCraftableRecipe(ItemNames.URANIUM_238_STR, 10, 0.993,
+                CrafterType.CENTRIFUGE, new double[]{10}, uraniumOre);
+        Item uraniumFuelCell = genCraftableRecipe(ItemNames.URANIUM_FUEL_CELL_STR, 10, 10,
+                CrafterType.ASSEMBLER, new double[]{10, 1, 19}, ironPlate, uranium235, uranium238);
+        Item usedUpUraniumFuelCell = genCraftableRecipe(ItemNames.USED_UP_URANIUM_FUEL_CELL_STR, 200,
+                1, CrafterType.HEATER, new double[]{1}, uraniumFuelCell);
 
         /* TODO -- this produces uranium238 */
-        Item nuclearFuelReprocessing = genCraftableRecipe(ItemNames.NUCLEAR_FUEL_REPROCESSING_STR, 50, 3, new double[]{5}, usedUpUraniumFuelCell);
+        Item nuclearFuelReprocessing = genCraftableRecipe(ItemNames.NUCLEAR_FUEL_REPROCESSING_STR, 50,
+                3, CrafterType.CENTRIFUGE, new double[]{5}, usedUpUraniumFuelCell);
 
 
         // Everything else (mostly)
@@ -165,10 +208,11 @@ public class RecipeNetwork
     private Craftable genCraftableRecipe(String itemName,
                                          double craftingTime,
                                          double outCount,
+                                         CrafterType crafter,
                                          double[] ingredientCount,
                                          Item ... ingredients)
     {
-        Craftable newItem = new Craftable(itemName, ingredientCount, craftingTime, outCount, ingredients);
+        Craftable newItem = new Craftable(itemName, ingredientCount, craftingTime, crafter, outCount, ingredients);
 
         items.put(itemName, newItem);
 

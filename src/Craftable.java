@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* TODO -- might be better to do recipes as nodes instead of items */
-
 public class Craftable extends Item
 {
     // component information
@@ -64,21 +62,6 @@ public class Craftable extends Item
     public double getNumProd()
     {
         return numProd;
-    }
-
-    @Override
-    public String toString()
-    {
-        // for now just call all of the toStrings of ingredients with a multiplier
-        String retString = (this.getName() + ":\n");
-
-        // for each item in the list, indent that item, tab in, say its num and call its toString
-        for (int i = 0; i < counts.length; i ++)
-        {
-            retString.concat("\t" + components.get(i).toString());
-        }
-
-        return retString;
     }
 
 }

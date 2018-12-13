@@ -17,6 +17,9 @@ public class RecipeNetwork
         /* TODO -- some items have multiple recipes */
         /* TODO -- how do we handle recipes that have multiple upstream possibilities? */
         /* TODO -- might need a specific "crafted by" (i.e. assmbler vs furnace vs chem plant, etc) field for items */
+        /* TODO -- since fluids kinda do their own thing, I think in recipe cascades I'll treat them as raw, and then
+           have a separate cascade for them. Note that I think this is a fairly complicated problem.
+         */
 
         // Raw inputs
         Item rawWood = new Item(ItemNames.RAW_WOOD_STR);

@@ -64,4 +64,22 @@ public class Craftable extends Item
         return numProd;
     }
 
+    /**
+     * Generates a string containing the base time to craft this item and the number of ingredients to make it
+     * in the previous level. (i.e. iron plates take 3.5 seconds to craft and 1 iron ore).
+     * @return a string giving the primary recipe for the item.
+     */
+    public String getBaseRecipe()
+    {
+        String retstring = numProd + " " + this.getName() + ": " + this.getCraftSpeed() + " seconds ";
+
+        for (int i = 0; i < components.size(); i++)
+        {
+            retstring.concat("+ " + counts[i] + " " + components.get(i));
+        }
+
+        return retstring;
+    }
+
+
 }

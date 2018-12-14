@@ -81,5 +81,39 @@ public class Craftable extends Item
         return retstring;
     }
 
+    /**
+     * Uses the time it takes to produce this item and the components that it uses in order to determine consumption
+     * of primary ingredients per minute.
+     *
+     * @param perMinute the number of this item that you want to produce per minute
+     * @return a string that gives the number of input components needed to produce this many of this item per minute
+     */
+    public String getRecipePerMinute(double perMinute)
+    {
+        // if the recipe produces more than one item per cycle, then the consumption per output item is not the number
+        // of the items that goes into the recipe
+        double inputRatio = 1.0 / numProd;
 
+        double[] modifiedInputs = new double[counts.length];
+        for (int i = 0; i < counts.length; i ++)
+        {
+            modifiedInputs[i] = counts[i] * inputRatio;
+        }
+
+        String retstr = perMinute + " " + this.getName() + " per minute: ";
+
+        for (int i = 0; i < modifiedInputs.length; i++)
+        {
+            if (i == 0)
+            {
+                retstr.concat(modifiedInputs[i] + " " + components.get(i));
+            }
+            else
+            {
+                retstr.concat(" + " + modifiedInputs[i] + " " + components.get(i));
+            }
+        }
+
+        return retstr;
+    }
 }
